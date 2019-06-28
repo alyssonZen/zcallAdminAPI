@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/zcall', function () {
+Route::get('/', function () {
     return view('welcome');
+});
+Route::get('/zcall', function () {
+    return "OK";
 });
