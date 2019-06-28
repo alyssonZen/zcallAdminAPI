@@ -19,9 +19,9 @@ class Clientes extends Migration
           $table->string('cpf_cnpj', 20);
           $table->string('insc_estadual', 20)->nullable(true);
           $table->string('servidor', 150)->default('127.0.0.1');
-          $table->string('login', 20);
-          $table->string('senha', 20);
-          $table->string('banco', 20);
+          $table->string('login', 20)->default('mudar');
+          $table->string('senha', 20)->default('mudar');
+          $table->string('banco', 20)->default('mudar');
           $table->integer('porta')->default(3306);
           $table->dateTime('ultimo_acesso')->nullable(true);
           $table->string('versao_banco', 20)->nullable(true);
@@ -50,6 +50,6 @@ class Clientes extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('clientes');
     }
 }
